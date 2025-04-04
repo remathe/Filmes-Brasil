@@ -3,41 +3,41 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import { useFonts, Roboto_400Regular } from '@expo-google-fonts/roboto';
 
-const imageData = [
+const carData = [
   {
     id: '1',
-    name: 'Cidade de Deus',
+    name: 'Volkswagen Fusca',
     description:
-      'Lançado em 2002, o filme retrata a realidade das favelas do Rio de Janeiro nas décadas de 1960 e 1980. Baseado em fatos reais, a história acompanha a vida de Buscapé e Zé Pequeno em meio à violência e ao crime organizado.',
-    image: require('./assets/cidade_de_deus.jpg'),
+      'O Fusca é um dos carros mais icônicos do Brasil, símbolo da popularização do automóvel no país. Produzido por décadas, conquistou gerações com seu design único e resistência.',
+    image: require('./assets/fusca.jpg'),
   },
   {
     id: '2',
-    name: 'Central do Brasil',
+    name: 'Chevrolet Opala',
     description:
-      'Este drama emocionante de 1998 conta a jornada de uma ex-professora e um garoto órfão em busca de seu pai pelo interior do Brasil. O filme é conhecido por sua forte carga emocional e atuação memorável de Fernanda Montenegro.',
-    image: require('./assets/central_do_brasil.jpg'),
+      'Lançado em 1968, o Opala foi um dos primeiros modelos da GM no Brasil. Conhecido por seu desempenho e conforto, marcou época nas décadas de 70 e 80.',
+    image: require('./assets/opala.jpg'),
   },
   {
     id: '3',
-    name: 'Tropa de Elite',
+    name: 'Fiat Uno Mille',
     description:
-      'Um dos filmes mais icônicos do cinema brasileiro, lançado em 2007, acompanha o Capitão Nascimento e sua luta contra o crime no Rio de Janeiro, mostrando o funcionamento do BOPE e a corrupção dentro do sistema.',
-    image: require('./assets/tropa_de_elite.jpg'),
+      'Compacto e econômico, o Uno Mille fez sucesso desde os anos 80. Seu design simples e manutenção barata o tornaram um dos carros mais vendidos do Brasil.',
+    image: require('./assets/uno.webp'),
   },
   {
     id: '4',
-    name: 'O Auto da Compadecida',
+    name: 'Ford Escort XR3',
     description:
-      'Baseado na peça teatral de Ariano Suassuna, o filme de 2000 mistura humor e crítica social ao contar as aventuras de João Grilo e Chicó no sertão nordestino, onde encontram figuras míticas e religiosas.',
-    image: require('./assets/auto_da_compadecida.jpg'),
+      'O XR3 foi um dos modelos esportivos mais desejados do Brasil nos anos 80 e 90, com visual arrojado e desempenho superior aos modelos comuns da época.',
+    image: require('./assets/xr3.jpeg'),
   },
   {
     id: '5',
-    name: 'Que Horas Ela Volta?',
+    name: 'Chevrolet Chevette',
     description:
-      'Este drama social de 2015 aborda as diferenças de classe no Brasil por meio da história de uma empregada doméstica e sua filha, que desafiam as barreiras impostas pela desigualdade social.',
-    image: require('./assets/que_horas_ela_volta.jpeg'),
+      'O Chevette foi um carro popular da GM com longa produção no Brasil. Compacto, resistente e barato, era muito querido entre os motoristas iniciantes.',
+    image: require('./assets/chevette.webp'),
   },
 ];
 
@@ -51,16 +51,16 @@ export default function App() {
   if (!fontsLoaded) {
     return (
       <View style={styles.container}>
-        <Text>...</Text>
+        <Text>Carregando...</Text>
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Filmes Brasil</Text>
+      <Text style={styles.header}>Carros Brasil</Text>
       <FlatList
-        data={imageData}
+        data={carData}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.card}>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
-    color: '#006400', 
+    color: '#006400',
   },
   card: {
     backgroundColor: '#f9f9f9',
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 200,
-    height: 300,
+    height: 130,
     borderRadius: 10,
     marginBottom: 10,
   },
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 10,
-    backgroundColor: '#006400', 
+    backgroundColor: '#006400',
     padding: 10,
     borderRadius: 5,
   },
